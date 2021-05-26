@@ -86,10 +86,8 @@ def decode_predects(predicts, top=5) :
     results = []
     for predict in predicts:
         # ソートして最後の値が最大値なので、top～最後を取り出して降順に並べ替え
-        top_indices = predict.argsort()[-top:][::-1]
-        # result = [(labels[i], predict[i]) for i in top_indices]
+        top_indices = np.argsort(predict)[-top:][::-1]
         result = [(i, predict[i]) for i in top_indices]
-        result.sort(key=lambda x: x[1], reverse=True)
         results.append(result)
     return results
 

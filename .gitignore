@@ -137,6 +137,8 @@ tmp*/
 .vscode/
 *.jpg
 *.h5
+saved_model
 saved_model/
+model/
 img/
 _IR/
